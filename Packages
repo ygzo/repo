@@ -44,16 +44,16 @@ Depiction: https://cydia.akemi.ai/?page/ai.akemi.appsyncunified
 Name: AppSync Unified
 
 Package: com.ygzo.installdshallobey
-Version: 3.0.0-3+debug
+Version: 3.0.0-4+debug
 Architecture: iphoneos-arm
 Maintainer: ygzo <ygzo@icloud.com>
-Installed-Size: 180
+Installed-Size: 196
 Depends: mobilesubstrate (>= 0.9.5000)
-Filename: debs/com.ygzo.installdshallobey_3.0.0-3+debug_iphoneos-arm.deb
-Size: 13418
-MD5sum: 361b648ec736740f3f5b6926b43d17e5
-SHA1: 2dddb2c4e020a62e72075a1cf9d9bf4fe8f8aac5
-SHA256: 15360d0d5d38e3d9a353015e0d477e1dad7a577e92ec37a2964401066b51372a
+Filename: debs/com.ygzo.installdshallobey_3.0.0-4+debug_iphoneos-arm.deb
+Size: 15046
+MD5sum: 13efabd3be0290b8dc687b2d23face5a
+SHA1: 9204a5cbc395256438fb1872aae9d149d4432593
+SHA256: 37414c4fff4bf21e56617fdb525055c4752f87aee4b2b368125022a46ac355ec
 Section: Tweaks
 Homepage: https://github.com/ygzo/installdshallobey
 Description: Ultimate iOS app installation bypass suite.
