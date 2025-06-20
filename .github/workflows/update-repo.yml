@@ -6,6 +6,18 @@ on:
       - 'debs/**'
   workflow_dispatch:
 
+# Add permissions for GitHub Pages deployment
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   update-repo:
     runs-on: ubuntu-latest
@@ -116,4 +128,31 @@ jobs:
     
     - name: No changes detected
       if: steps.verify-changed-files.outputs.changed == 'false'
-      run: echo "No changes detected in repository files" 
+      run: echo "No changes detected in repository files"
+
+  # GitHub Pages deployment job
+  deploy-pages:
+    runs-on: ubuntu-latest
+    needs: update-repo
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        ref: main  # Ensure we get the latest changes from the update-repo job
+    
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+    
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        # Upload entire repository
+        path: '.'
+    
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4 
