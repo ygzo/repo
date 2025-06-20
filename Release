@@ -1,21 +1,22 @@
 Origin: ygzo
-Label: ygzo
+Label: ygzo's repo
 Suite: stable
+Icon: https://ygzo.github.io/repo/CydiaIcon.jpg
 Version: 1.0
 Codename: ios
 Architectures: iphoneos-arm
 Components: main
 Description: ygzo's Repo
-Date: Fri, 20 Jun 2025 13:21:39 +0000
+Date: Fri, 20 Jun 2025 13:35:23 +0000
 MD5Sum:
- ac995cdce8277b94022848691c39267d 3010 Packages
- 110c203a090e7f24e6ae745e16b8dd1a 1409 Packages.bz2
- 103593c09deef49dd85387cc5f27bea6 1336 Packages.xz
+ cf79fee7369629d3fa82e869832549ac 3093 Packages
+ ef60203e5ae7a7a59438cc0f7c790942 1438 Packages.bz2
+ a77c3078cb67c680586323b427d00c93 1364 Packages.xz
 SHA1:
- 6939fda7d346e61a06435b3ca0627266ac879b4d 3010 Packages
- 3e1140f35d2f3af1c4c743f9de1bf000538575e3 1409 Packages.bz2
- b0b8b7d9e65de862f517916063a56123fad7ede0 1336 Packages.xz
+ f6da046ddcb1096624dc953b62de6ea0e2caa2ec 3093 Packages
+ a72b0a17da68c638b00fd67b83a01d1518b24435 1438 Packages.bz2
+ 655eaf0d3718775ebd60c8a4ac162d39b64bd4e6 1364 Packages.xz
 SHA256:
- bbb347eb589c00b4aac9461385c235f7700f79e13a940683b90b07fbd09bf0bc 3010 Packages
- aa6afca74b27e2335ba28b19fff0cae784b5dbd2202086d6a300ee5ecb9df028 1409 Packages.bz2
- 65770bc7ebaadf4509bae9d0ebf48a0cb363b921b6709222f09fad92a7b196ed 1336 Packages.xz
+ d4fc088e5a505d10530cce461f3f858fc4fb6172a4ed1bea167719e2417e2897 3093 Packages
+ 6f969de31076d410fde9d156079aa3d4162678409cbeb50fcf5792cd2961dc91 1438 Packages.bz2
+ 02468af1a5086292b033cd3aa8296256c516d8efa0c1d801647a7e05fd1acd9f 1364 Packages.xz

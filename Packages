@@ -44,18 +44,19 @@ Depiction: https://cydia.akemi.ai/?page/ai.akemi.appsyncunified
 Name: AppSync Unified
 
 Package: com.ygzo.installdshallobey
-Version: 1.0.0-8+debug
+Version: 2.1.0-1+debug
 Architecture: iphoneos-arm
-Maintainer: Yağız Okuyan
-Installed-Size: 168
-Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 16.0), firmware (<< 17.0)
-Filename: debs/com.ygzo.installdshallobey_1.0.0-8+debug_iphoneos-arm.deb
-Size: 6434
-MD5sum: e9d3f4e59157ea21d613886dae99b855
-SHA1: b979114c4e5f0c6a8be4d582251e12c8a217447b
-SHA256: be53c9de2c6c402dcda01c3b9493a2ce6fa825bc6ebd73f6be800cbd4167c208
+Maintainer: ygzo <ygzo@icloud.com>
+Installed-Size: 172
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: debs/com.ygzo.installdshallobey_2.1.0-1+debug_iphoneos-arm.deb
+Size: 7338
+MD5sum: f78079a651fdf03e6fa89ad4ce305d15
+SHA1: 8eb57ab78f412a062f1d35fe0f0dbb914d5aba67
+SHA256: bcd625dfec4785c360f13a6584889ac1f505b8e37ef62c858bbe04f4688a5925
 Section: Tweaks
-Description: Bypass iOS 17+ app extension validation errors on iOS 16
-Author: Yağız Okuyan
+Homepage: https://github.com/ygzo/installdshallobey
+Description: Bypass iOS 17+ app extension validation on iOS 16 devices - Stable version with clean validation bypasses only.
+Author: ygzo <ygzo@icloud.com>
 Name: installdshallobey
 
