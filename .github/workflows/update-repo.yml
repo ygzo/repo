@@ -1,0 +1,118 @@
+name: Update Repository
+
+on:
+  push:
+    paths:
+      - 'debs/**'
+  workflow_dispatch:
+
+jobs:
+  update-repo:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Set up environment
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y dpkg-dev bzip2 xz-utils
+    
+    - name: Create debs directory if it doesn't exist
+      run: |
+        mkdir -p debs
+    
+    - name: Generate Packages file
+      run: |
+        # Remove old Packages file
+        rm -f Packages Packages.bz2 Packages.xz
+        
+        # Generate new Packages file
+        dpkg-scanpackages -m debs /dev/null > Packages
+        
+        # Create compressed versions
+        bzip2 -fks Packages
+        xz -fks Packages
+    
+    - name: Update Release file
+      run: |
+        # Get current date
+        DATE=$(date -Ru)
+        
+        # Calculate file hashes and sizes
+        MD5_PACKAGES=$(md5sum Packages | cut -d' ' -f1)
+        SHA1_PACKAGES=$(sha1sum Packages | cut -d' ' -f1)
+        SHA256_PACKAGES=$(sha256sum Packages | cut -d' ' -f1)
+        SIZE_PACKAGES=$(wc -c < Packages)
+        
+        MD5_PACKAGES_BZ2=$(md5sum Packages.bz2 | cut -d' ' -f1)
+        SHA1_PACKAGES_BZ2=$(sha1sum Packages.bz2 | cut -d' ' -f1)
+        SHA256_PACKAGES_BZ2=$(sha256sum Packages.bz2 | cut -d' ' -f1)
+        SIZE_PACKAGES_BZ2=$(wc -c < Packages.bz2)
+        
+        MD5_PACKAGES_XZ=$(md5sum Packages.xz | cut -d' ' -f1)
+        SHA1_PACKAGES_XZ=$(sha1sum Packages.xz | cut -d' ' -f1)
+        SHA256_PACKAGES_XZ=$(sha256sum Packages.xz | cut -d' ' -f1)
+        SIZE_PACKAGES_XZ=$(wc -c < Packages.xz)
+        
+        # Create Release file
+        cat > Release << 'EOF'
+        Origin: ygzo
+        Label: ygzo
+        Suite: stable
+        Version: 1.0
+        Codename: ios
+        Architectures: iphoneos-arm
+        Components: main
+        Description: ygzo's Repo
+        EOF
+        
+        echo "Date: $DATE" >> Release
+        echo "MD5Sum:" >> Release
+        echo " $MD5_PACKAGES $SIZE_PACKAGES Packages" >> Release
+        echo " $MD5_PACKAGES_BZ2 $SIZE_PACKAGES_BZ2 Packages.bz2" >> Release
+        echo " $MD5_PACKAGES_XZ $SIZE_PACKAGES_XZ Packages.xz" >> Release
+        echo "SHA1:" >> Release
+        echo " $SHA1_PACKAGES $SIZE_PACKAGES Packages" >> Release
+        echo " $SHA1_PACKAGES_BZ2 $SIZE_PACKAGES_BZ2 Packages.bz2" >> Release
+        echo " $SHA1_PACKAGES_XZ $SIZE_PACKAGES_XZ Packages.xz" >> Release
+        echo "SHA256:" >> Release
+        echo " $SHA256_PACKAGES $SIZE_PACKAGES Packages" >> Release
+        echo " $SHA256_PACKAGES_BZ2 $SIZE_PACKAGES_BZ2 Packages.bz2" >> Release
+        echo " $SHA256_PACKAGES_XZ $SIZE_PACKAGES_XZ Packages.xz" >> Release
+    
+    - name: Update package count in index.html
+      run: |
+        # Count packages in the Packages file
+        PACKAGE_COUNT=$(grep -c "^Package:" Packages || echo "0")
+        
+        # Update index.html title if needed (optional)
+        # This step can be customized based on your specific needs
+        echo "Repository updated with $PACKAGE_COUNT packages"
+    
+    - name: Check for changes
+      id: verify-changed-files
+      run: |
+        if git diff --quiet; then
+          echo "changed=false" >> $GITHUB_OUTPUT
+        else
+          echo "changed=true" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Commit and push changes
+      if: steps.verify-changed-files.outputs.changed == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add Packages Packages.bz2 Packages.xz Release
+        git commit -m "Auto-update repository files after deb upload [skip ci]"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: No changes detected
+      if: steps.verify-changed-files.outputs.changed == 'false'
+      run: echo "No changes detected in repository files" 

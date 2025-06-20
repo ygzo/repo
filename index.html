@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>ygzo's repo</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background-color: #000000;
+			color: #ffffff;
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+			line-height: 1.6;
+			text-align: left;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+
+		.header-section {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 0;
+			flex-wrap: wrap;
+			gap: 20px;
+		}
+
+		.logo-title {
+			display: flex;
+			align-items: center;
+			gap: 15px;
+		}
+
+		.logo-title h1 {
+			font-size: 2.5rem;
+			font-weight: 300;
+			margin: 0;
+		}
+
+		.logo-title img {
+			width: 50px;
+			height: 50px;
+			border-radius: 12px;
+		}
+
+		.tab-navigation {
+			display: flex;
+			gap: 10px;
+		}
+
+		.tab-button {
+			padding: 10px 20px;
+			background-color: #1a1a1a;
+			color: #cccccc;
+			border: 1px solid #333333;
+			border-radius: 8px;
+			cursor: pointer;
+			font-size: 0.95rem;
+			font-weight: 500;
+			transition: all 0.2s ease;
+			text-decoration: none;
+			display: inline-block;
+		}
+
+		.tab-button.active {
+			background-color: #333333;
+			color: #ffffff;
+			border-color: #555555;
+		}
+
+		.tab-button:hover {
+			background-color: #2a2a2a;
+			color: #ffffff;
+			text-decoration: none;
+		}
+
+		.tab-content {
+			display: none;
+		}
+
+		.tab-content.active {
+			display: block;
+		}
+
+		     .disclaimer {
+       background-color: #1a1a1a;
+       border: 1px solid #333333;
+       border-radius: 8px;
+       padding: 16px;
+       margin: -30px 0 1.5rem 0;
+       color: #cccccc;
+       font-size: 0.9rem;
+       line-height: 1.5;
+     }
+
+		.disclaimer strong {
+			color: #ffffff;
+		}
+
+		.button-group {
+			margin: 1.5rem 0;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 12px;
+		}
+
+		.repo-button {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			padding: 12px 20px;
+			background-color: #1a1a1a;
+			color: #ffffff;
+			text-decoration: none;
+			border-radius: 8px;
+			border: 1px solid #333333;
+			font-size: 0.95rem;
+			font-weight: 500;
+			transition: all 0.2s ease;
+			min-width: 120px;
+			justify-content: center;
+		}
+
+		.repo-button:hover {
+			background-color: #2a2a2a;
+			border-color: #555555;
+			transform: translateY(-1px);
+			color: #ffffff;
+			text-decoration: none;
+		}
+
+		.repo-button:focus {
+			outline: 2px solid #ffffff;
+			outline-offset: 2px;
+		}
+
+		.repo-button img {
+			width: 20px;
+			height: 20px;
+			border-radius: 4px;
+		}
+
+		.package {
+			background-color: #1a1a1a;
+			border: 1px solid #333333;
+			border-radius: 12px;
+			padding: 24px;
+			margin-bottom: 20px;
+		}
+
+		.package-title {
+			font-size: 1.25rem;
+			font-weight: 600;
+			margin-bottom: 8px;
+			color: #ffffff;
+		}
+
+		.package-identifier {
+			font-size: 0.85rem;
+			color: #888888;
+			margin-bottom: 12px;
+			font-family: 'SF Mono', Monaco, monospace;
+		}
+
+		.package-description {
+			color: #cccccc;
+			margin-bottom: 16px;
+			line-height: 1.5;
+		}
+
+		.package-meta {
+			display: flex;
+			gap: 15px;
+			margin-bottom: 16px;
+			flex-wrap: wrap;
+		}
+
+		.package-version,
+		.package-size {
+			font-size: 0.85rem;
+			color: #aaaaaa;
+		}
+
+		.info-button {
+			display: inline-block;
+			padding: 8px 16px;
+			background-color: #333333;
+			color: #ffffff;
+			text-decoration: none;
+			border-radius: 6px;
+			font-size: 0.9rem;
+			font-weight: 500;
+			transition: all 0.2s ease;
+		}
+
+		.info-button:hover {
+			background-color: #444444;
+			color: #ffffff;
+			text-decoration: none;
+		}
+
+		.info-button:focus {
+			outline: 2px solid #ffffff;
+			outline-offset: 2px;
+		}
+
+		.loading {
+			text-align: center;
+			color: #cccccc;
+			padding: 40px;
+			font-style: italic;
+		}
+
+		.error {
+			background-color: #2a1a1a;
+			border: 1px solid #aa3333;
+			border-radius: 8px;
+			padding: 16px;
+			color: #ffaaaa;
+			margin: -30px 0;
+		}
+
+		@media (max-width: 768px) {
+			.container {
+				padding: 15px;
+			}
+
+			.header-section {
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 15px;
+			}
+
+			.logo-title h1 {
+				font-size: 2rem;
+			}
+
+			.tab-navigation {
+				width: 100%;
+			}
+
+			.tab-button {
+				flex: 1;
+				text-align: center;
+			}
+
+			.button-group {
+				flex-direction: column;
+			}
+
+			.repo-button {
+				width: 100%;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.button-group {
+				gap: 8px;
+			}
+
+			.repo-button {
+				padding: 10px 16px;
+				font-size: 0.9rem;
+			}
+
+			.package-meta {
+				flex-direction: column;
+				gap: 5px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="header-section">
+			<div class="logo-title">
+				<img src="CydiaIcon.jpg" alt="ygzo's repo icon">
+				<h1>ygzo's repo</h1>
+			</div>
+			<nav class="tab-navigation">
+				<button class="tab-button active" onclick="showTab('home')">Home</button>
+				<button class="tab-button" onclick="showTab('packages')">Packages</button>
+			</nav>
+		</div>
+	</div>
+
+	<div class="container">
+		<div id="home-tab" class="tab-content active">
+			<div class="disclaimer">
+				<strong>Notice:</strong> This repository is for my personal use only. It includes tweaks I have made
+				myself and some other tweaks that are abandoned or reuploaded to my repo for ease of accessibility. Use
+				at your own discretion.
+			</div>
+
+			<div class="button-group">
+				<a class="repo-button" rel="nofollow noopener"
+					href="cydia://url/https://cydia.saurik.com/api/share#?source=https://ygzo.github.io/repo/"
+					aria-label="Add repository to Cydia">
+					<img src="https://api.ios-repo-updates.com/images/apt/cydia.png" alt="Cydia icon"> Cydia
+				</a>
+				<a class="repo-button" rel="nofollow noopener" href="installer://add/repo=https://ygzo.github.io/repo/"
+					aria-label="Add repository to Installer">
+					<img src="https://api.ios-repo-updates.com/images/apt/installer.png" alt="Installer icon"> Installer
+				</a>
+				<a class="repo-button" rel="nofollow noopener" href="sileo://source/https://ygzo.github.io/repo/"
+					aria-label="Add repository to Sileo">
+					<img src="https://api.ios-repo-updates.com/images/apt/sileo.png" alt="Sileo icon"> Sileo
+				</a>
+				<a class="repo-button" rel="nofollow noopener" href="zbra://sources/add/https://ygzo.github.io/repo/"
+					aria-label="Add repository to Zebra">
+					<img src="https://api.ios-repo-updates.com/images/apt/zebra.png" alt="Zebra icon"> Zebra
+				</a>
+			</div>
+		</div>
+
+		<div id="packages-tab" class="tab-content">
+			<div id="packages-loading" class="loading">Loading packages...</div>
+			<div id="packages-error" class="error" style="display: none;"></div>
+			<div id="packages-list"></div>
+		</div>
+	</div>
+
+	<script>
+		function showTab(tabName) {
+			// Hide all tab contents
+			document.querySelectorAll('.tab-content').forEach(tab => {
+				tab.classList.remove('active');
+			});
+
+			// Remove active class from all tab buttons
+			document.querySelectorAll('.tab-button').forEach(button => {
+				button.classList.remove('active');
+			});
+
+			// Show selected tab content
+			document.getElementById(tabName + '-tab').classList.add('active');
+
+			// Add active class to clicked button
+			event.target.classList.add('active');
+
+			// Load packages if packages tab is selected
+			if (tabName === 'packages') {
+				loadPackages();
+			}
+		}
+
+		async function loadPackages() {
+			const packagesLoading = document.getElementById('packages-loading');
+			const packagesError = document.getElementById('packages-error');
+			const packagesList = document.getElementById('packages-list');
+
+			// Show loading, hide error
+			packagesLoading.style.display = 'block';
+			packagesError.style.display = 'none';
+			packagesList.innerHTML = '';
+
+			try {
+				// Try to fetch the Packages file
+				const response = await fetch('./Packages');
+				if (!response.ok) {
+					throw new Error(`HTTP error! status: ${response.status}`);
+				}
+
+				const packagesText = await response.text();
+				const packages = parsePackagesFile(packagesText);
+
+				packagesLoading.style.display = 'none';
+
+				if (packages.length === 0) {
+					packagesList.innerHTML = '<div class="loading">No packages found.</div>';
+					return;
+				}
+
+				// Render packages
+				packages.forEach(pkg => {
+					const packageElement = createPackageElement(pkg);
+					packagesList.appendChild(packageElement);
+				});
+
+			} catch (error) {
+				console.error('Error loading packages:', error);
+				packagesLoading.style.display = 'none';
+				packagesError.style.display = 'block';
+				packagesError.textContent = 'Error loading packages. Please try again later.';
+			}
+		}
+
+		function parsePackagesFile(text) {
+			const packages = [];
+			const packageBlocks = text.split('\n\n').filter(block => block.trim());
+
+			packageBlocks.forEach(block => {
+				const lines = block.split('\n');
+				const pkg = {};
+
+				lines.forEach(line => {
+					const [key, ...valueParts] = line.split(': ');
+					if (key && valueParts.length > 0) {
+						const value = valueParts.join(': ').trim();
+						pkg[key.toLowerCase().replace('-', '')] = value;
+					}
+				});
+
+				if (pkg.package && pkg.name) {
+					packages.push(pkg);
+				}
+			});
+
+			return packages;
+		}
+
+		function createPackageElement(pkg) {
+			const packageDiv = document.createElement('div');
+			packageDiv.className = 'package';
+
+			const title = document.createElement('div');
+			title.className = 'package-title';
+			title.textContent = pkg.name || pkg.package;
+
+			const identifier = document.createElement('div');
+			identifier.className = 'package-identifier';
+			identifier.textContent = pkg.package;
+
+			const description = document.createElement('div');
+			description.className = 'package-description';
+			description.textContent = pkg.description || 'No description available.';
+
+			const meta = document.createElement('div');
+			meta.className = 'package-meta';
+
+			if (pkg.version) {
+				const version = document.createElement('span');
+				version.className = 'package-version';
+				version.textContent = `Version: ${pkg.version}`;
+				meta.appendChild(version);
+			}
+
+			if (pkg.size) {
+				const size = document.createElement('span');
+				size.className = 'package-size';
+				const sizeKB = Math.round(parseInt(pkg.size) / 1024);
+				size.textContent = `Size: ${sizeKB} KB`;
+				meta.appendChild(size);
+			}
+
+			const infoButton = document.createElement('a');
+			infoButton.className = 'info-button';
+			infoButton.href = `depictions/?p=${pkg.package}`;
+			infoButton.textContent = 'More info';
+
+			packageDiv.appendChild(title);
+			packageDiv.appendChild(identifier);
+			packageDiv.appendChild(description);
+			if (meta.children.length > 0) {
+				packageDiv.appendChild(meta);
+			}
+			packageDiv.appendChild(infoButton);
+
+			return packageDiv;
+		}
+	</script>
+
+</body>
+
+</html>
