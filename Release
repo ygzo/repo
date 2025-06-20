@@ -1,0 +1,21 @@
+Origin: ygzo
+Label: ygzo
+Suite: stable
+Version: 1.0
+Codename: ios
+Architectures: iphoneos-arm
+Components: main
+Description: ygzo's Repo
+Date: Fri, 20 Jun 2025 13:21:39 +0000
+MD5Sum:
+ ac995cdce8277b94022848691c39267d 3010 Packages
+ 110c203a090e7f24e6ae745e16b8dd1a 1409 Packages.bz2
+ 103593c09deef49dd85387cc5f27bea6 1336 Packages.xz
+SHA1:
+ 6939fda7d346e61a06435b3ca0627266ac879b4d 3010 Packages
+ 3e1140f35d2f3af1c4c743f9de1bf000538575e3 1409 Packages.bz2
+ b0b8b7d9e65de862f517916063a56123fad7ede0 1336 Packages.xz
+SHA256:
+ bbb347eb589c00b4aac9461385c235f7700f79e13a940683b90b07fbd09bf0bc 3010 Packages
+ aa6afca74b27e2335ba28b19fff0cae784b5dbd2202086d6a300ee5ecb9df028 1409 Packages.bz2
+ 65770bc7ebaadf4509bae9d0ebf48a0cb363b921b6709222f09fad92a7b196ed 1336 Packages.xz

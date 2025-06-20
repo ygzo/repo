@@ -1,0 +1,61 @@
+Package: ai.akemi.appinst
+Version: 2.1
+Architecture: iphoneos-arm
+Maintainer: Karen/あけみ <karen@akemi.ai>
+Installed-Size: 140
+Pre-Depends: firmware (>= 5.0)
+Depends: ai.akemi.appsyncunified (>= 5.1)
+Conflicts: com.sull.appinstaller
+Replaces: com.linusyang.appinst
+Provides: com.linusyang.appinst
+Filename: debs/ai.akemi.appinst_2.1_iphoneos-arm.deb
+Size: 30006
+MD5sum: 194f26954d066b7a9a542727c59a82e1
+SHA1: 9ddf55dcdadaf9b37c58c3cd45f4bb677a307c27
+SHA256: 99183781c7884ad50d197e4c754593bea383e9e574218b69d06a70cf8fad3f6a
+Section: Utilities
+Priority: standard
+Homepage: https://github.com/akemin-dayo/AppSync
+Description: A command-line IPA app installer.
+Tag: role::enduser, purpose::console
+Author: Karen/あけみ, Linus Yang <karen@akemi.ai>
+Depiction: https://cydia.akemi.ai/?page/ai.akemi.appinst
+Name: appinst (App Installer)
+
+Package: ai.akemi.appsyncunified
+Version: 113.0
+Architecture: iphoneos-arm
+Maintainer: Karen/あけみ <karen@akemi.ai>
+Installed-Size: 508
+Depends: firmware (>= 5.0), mobilesubstrate (>= 0.9.5100), firmware (<< 17.0)
+Conflicts: us.hackulo.appsync50, us.hackulo.appsync50plus, com.hackyouriphone.appsync7, com.teiron.ppsync, appsync50plus2.25pp, com.linusyang.appsync, com.sull.appsyncunified, com.sull.appsyncunifiedbeta, com.xsellize.appsync50, com.xsellize.appsync50plus, appsync50plus.178, appsync50plus2.178, cydia.net.angelxwind.appsyncunified, com.ifucker.appsync, com.sexyphonetech.appsyncunified, appsyncunifiedofficial, org.digbick.asufixed, cn.mingmei.asu623517234615234813, technology.goated.appsync, technology.goated.appsyncunified, vaginalfisting.appsynctool, science.xnu.substitute, akemi.appsink, akemi.appsyncunifed, akemi.appsyncunifed2, akemi.appsyncunifedpatched, appsyncpatched, appsyncrootless, weaponized.autism.technology.appsyncunified
+Replaces: us.hackulo.appsync50, net.angelxwind.appsyncunified
+Provides: appsync, net.angelxwind.appsyncunified
+Filename: debs/ai.akemi.appsyncunified_113.0_iphoneos-arm.deb
+Size: 38422
+MD5sum: 07da1db164ff781b4faf401efdc84f6d
+SHA1: 52130f211e6c53ade9a7fd69c805c5d246886a53
+SHA256: 97a062588ac5cb4f32519b5fa6145e1058fd424b4bd4c42767235af1e2b148fd
+Section: Tweaks
+Homepage: https://cydia.akemi.ai/
+Description: Enables the ability to install unsigned/fakesigned iOS applications.
+Author: Karen/あけみ, Linus Yang <karen@akemi.ai>
+Depiction: https://cydia.akemi.ai/?page/ai.akemi.appsyncunified
+Name: AppSync Unified
+
+Package: com.ygzo.installdshallobey
+Version: 1.0.0-8+debug
+Architecture: iphoneos-arm
+Maintainer: Yağız Okuyan
+Installed-Size: 168
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 16.0), firmware (<< 17.0)
+Filename: debs/com.ygzo.installdshallobey_1.0.0-8+debug_iphoneos-arm.deb
+Size: 6434
+MD5sum: e9d3f4e59157ea21d613886dae99b855
+SHA1: b979114c4e5f0c6a8be4d582251e12c8a217447b
+SHA256: be53c9de2c6c402dcda01c3b9493a2ce6fa825bc6ebd73f6be800cbd4167c208
+Section: Tweaks
+Description: Bypass iOS 17+ app extension validation errors on iOS 16
+Author: Yağız Okuyan
+Name: installdshallobey
+
