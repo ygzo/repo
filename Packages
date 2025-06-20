@@ -43,6 +43,23 @@ Author: Karen/あけみ, Linus Yang <karen@akemi.ai>
 Depiction: https://cydia.akemi.ai/?page/ai.akemi.appsyncunified
 Name: AppSync Unified
 
+Package: com.julioverne.lowerinstall
+Version: 0.0~beta6
+Architecture: iphoneos-arm
+Maintainer: Julio
+Depends: mobilesubstrate
+Filename: debs/com.julioverne.lowerinstall_0.0~beta6_iphoneos-arm.deb
+Size: 94160
+MD5sum: 39a54683ff0f9fb0c2880cf393c87816
+SHA1: eafac690946057ec063f6a9d786950a9f092ea4e
+SHA256: 0b641d287e8dfbbd00948de6cf85a6b18fb4f885f6e3b98ffb627b68388cf8c1
+Section: Tweaks
+Homepage: https://twitter.com/ijulioverne
+Description: Install Apps In Lower iOS Version
+Author: julioverne
+Depiction: https://julioverne.github.io/description.html?id=com.julioverne.lowerinstall
+Name: LowerInstall
+
 Package: com.ygzo.installdshallobey
 Version: 1.0.0-2+debug
 Architecture: iphoneos-arm
@@ -59,4 +76,20 @@ Homepage: https://github.com/ygzo/installdshallobey
 Description: Bypass iOS 17+ app extension validation on iOS 16.x devices.
 Author: ygzo <ygzo@example.com>
 Name: installdshallobey
+
+Package: it.ned.noappthinning
+Version: 1.1
+Architecture: iphoneos-arm
+Maintainer: ned
+Installed-Size: 136
+Depends: firmware (>= 11.0), mobilesubstrate
+Filename: debs/it.ned.noappthinning_1.1_iphoneos-arm.deb
+Size: 4178
+MD5sum: 4ee82df942c32965a18a5aaff7f808ff
+SHA1: 7eb24f9e13098128cb48596e53e9598ac9267497
+SHA256: be08bd53f86de2bfa7adc7720e7c21aaa67387ac4ccbc8912e337dffc4250dc1
+Section: Tweaks
+Description: Disable AppStore app thinning (iOS 11+) - by level3tjg
+Author: ned
+Name: NoAppThinning
 
