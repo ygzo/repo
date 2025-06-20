@@ -93,3 +93,20 @@ Description: Disable AppStore app thinning (iOS 11+) - by level3tjg
 Author: ned
 Name: NoAppThinning
 
+Package: moe.misty.sslkillswitch3
+Version: 1.5.1+rootful
+Architecture: iphoneos-arm
+Maintainer: NyaMisty <misty@misty.moe>
+Installed-Size: 196
+Depends: mobilesubstrate, preferenceloader
+Conflicts: com.nablac0d3.sslkillswitch2
+Filename: debs/moe.misty.sslkillswitch3_1.5.1+rootful_iphoneos-arm.deb
+Size: 17144
+MD5sum: c3e6d496e188a8db6608c8e1468cd97d
+SHA1: 4c70b95a5128f43b7e7d0b329225f6f603ab30c0
+SHA256: c077c8606a09d04221c5cc1caa2c6f2ca8a490a47c8d338bed6daaf31e0b84ef
+Section: Tweaks
+Description: Blackbox tool to disable SSL certificate validation - including certificate pinning - within iOS and OS X Apps.
+Author: NyaMisty <misty@misty.moe>, Alban Diquet <nabla.c0d3@gmail.com>
+Name: SSL Kill Switch 3
+
