@@ -7,16 +7,16 @@ Codename: ios
 Architectures: iphoneos-arm
 Components: main
 Description: ygzo's Repo
-Date: Sun, 22 Jun 2025 19:28:21 +0000
+Date: Sun, 22 Jun 2025 20:47:03 +0000
 MD5Sum:
- 9415fc748ee0a2fec1bdf382928b52a9 4900 Packages
- 8f92ef0274e35fc83dc0c84f565a0b3d 2136 Packages.bz2
- 1a29a6c2f4eb87b727a4e826a15e92fe 2036 Packages.xz
+ efeb66aeaad8aa19d93b557d6475faa9 5405 Packages
+ 63d91a3a3d4d5fa7aa705c431a6d07f4 2320 Packages.bz2
+ ebfe24ad8f77e76b53e3e10966f6f9ee 2216 Packages.xz
 SHA1:
- dc7486732bf6ef764a20a8951103a35afaac8b0f 4900 Packages
- 4a4371bb23da3f946defc754a1f03ecbd3535fc1 2136 Packages.bz2
- 5347b26f94456b0ab61a23f6ce9dab25ebb070c0 2036 Packages.xz
+ bf01848e36f0102877af94c5bcf313aef18ad2c1 5405 Packages
+ 552b3fadf70e6841e19ee4808c7f52d21559715c 2320 Packages.bz2
+ 94c74de5f4a72e546fe1d36fb6e5b7fa5c0e9d24 2216 Packages.xz
 SHA256:
- 17b88c2940988be1268fec89d21283dce94da5b0c21fc0e9c423a0d58b18cb45 4900 Packages
- bfdf8cb6e17bd31de3cfe7efd0a74704bdfd2df1efcc3928c440862ed69ee334 2136 Packages.bz2
- 0d2f7d35105ebd0395efee66c966e0533c210607d6ab38c11d9f7ca9442c3dea 2036 Packages.xz
+ 8a0c7bcb735f3c74a02e9505eafcffa06c9336fef2ebbc7e9d020b18b702a0c9 5405 Packages
+ 3c6ee95957804644852e180473e131b14251cace566769b20f1a45a9c0dd6a19 2320 Packages.bz2
+ 6c2d55255a26c0500ca2aae105c396fd0185772c56db60cedaf96203e90a95a0 2216 Packages.xz

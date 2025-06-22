@@ -77,6 +77,22 @@ Description: Bypass iOS 17+ app extension validation on iOS 16 devices - Stable 
 Author: ygzo <ygzo@example.com>
 Name: installdshallobey
 
+Package: com.ygzo.ipatool
+Version: 2.1.6-3
+Architecture: iphoneos-arm
+Maintainer: ygzo <ygzo@icloud.com>
+Installed-Size: 9432
+Filename: debs/com.ygzo.ipatool_2.1.6-3_iphoneos-arm.deb
+Size: 2993456
+MD5sum: 5d4338bf8f4289f3fe916a0d1bd99db5
+SHA1: b87b6e208a88ada4b0ddb667e6c222083404bdc0
+SHA256: cd4e23ed5aafdf534bdeb2458e99a8c249ca500985c3fae80a3bf8e8bb1708cd
+Section: Utilities
+Priority: optional
+Description: Installs ipatool binary to /usr/bin for command line usage
+Author: Majd Alfhaily
+Name: ipatool
+
 Package: it.ned.noappthinning
 Version: 1.1
 Architecture: iphoneos-arm
