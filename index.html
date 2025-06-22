@@ -455,18 +455,12 @@
 				meta.appendChild(size);
 			}
 
-			const infoButton = document.createElement('a');
-			infoButton.className = 'info-button';
-			infoButton.href = `depictions/?p=${pkg.package}`;
-			infoButton.textContent = 'More info';
-
 			packageDiv.appendChild(title);
 			packageDiv.appendChild(identifier);
 			packageDiv.appendChild(description);
 			if (meta.children.length > 0) {
 				packageDiv.appendChild(meta);
 			}
-			packageDiv.appendChild(infoButton);
 
 			return packageDiv;
 		}
