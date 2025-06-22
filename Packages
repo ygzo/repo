@@ -61,19 +61,19 @@ Depiction: https://julioverne.github.io/description.html?id=com.julioverne.lower
 Name: LowerInstall
 
 Package: com.ygzo.installdshallobey
-Version: 1.0.0-2+debug
+Version: 1.1.0-6+debug
 Architecture: iphoneos-arm
 Maintainer: ygzo <ygzo@example.com>
 Installed-Size: 172
 Depends: mobilesubstrate (>= 0.9.5000)
-Filename: debs/com.ygzo.installdshallobey_1.0.0-2+debug_iphoneos-arm.deb
-Size: 7192
-MD5sum: 9dfa7573d42215aa457e29b42e5365ef
-SHA1: 42cb95f95cd7bc4fd68f765f0338a80f03c68d47
-SHA256: 3891b62b8c50bf34e0b6294f24b1f3ee539d1de9cf2bc0809c06ea2437bec4bd
+Filename: debs/com.ygzo.installdshallobey_1.1.0-6+debug_iphoneos-arm.deb
+Size: 8832
+MD5sum: 117e7122865be1e9ccad5f92e488e4d8
+SHA1: 34eb626d074f9f5122b2df10460a9461c8c56a0c
+SHA256: e30cc1f9aa1cf3bad98f0355b94e0938b31c8e603af280d5f71dc093f37915ec
 Section: Tweaks
 Homepage: https://github.com/ygzo/installdshallobey
-Description: Bypass iOS 17+ app extension validation on iOS 16.x devices.
+Description: Bypass iOS 17+ app extension validation on iOS 16 devices - Stable version with clean validation bypasses only
 Author: ygzo <ygzo@example.com>
 Name: installdshallobey
 
